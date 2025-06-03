@@ -9,3 +9,5 @@ export * from './modules/helpers/enums/helper.enum';
 export * from './modules/helpers/interfaces';
 export * from './modules/helpers/services';
 export * from './modules/helpers/helper.module';
+
+export * from './modules/message/enums/message.enum';
