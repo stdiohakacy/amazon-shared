@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ShareModule } from 'src/modules/shared.module';
+import { ShareModule } from '../modules/shared.module';
 
 @Module({
   imports: [ShareModule],
