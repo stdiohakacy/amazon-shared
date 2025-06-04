@@ -1,4 +1,9 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import {
+  MiddlewareConsumer,
+  Module,
+  NestModule,
+  RequestMethod,
+} from '@nestjs/common';
 import { AppCustomLanguageMiddleware } from './middlewares/app.custom-language.middleware';
 @Module({
   providers: [],
@@ -6,6 +11,8 @@ import { AppCustomLanguageMiddleware } from './middlewares/app.custom-language.m
 })
 export class AppMiddlewareModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
-    consumer.apply(AppCustomLanguageMiddleware).forRoutes('*wildcard');
+    consumer
+      .apply(AppCustomLanguageMiddleware)
+      .forRoutes({ path: '*', method: RequestMethod.ALL });
   }
 }
