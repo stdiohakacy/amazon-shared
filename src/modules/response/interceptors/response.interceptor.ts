@@ -20,6 +20,7 @@ import { MessageOptionsPropertiesInterface } from '../../message/interfaces/mess
 import { Response } from 'express';
 import { ENUM_MESSAGE_LANGUAGE } from '../../message/enums/message.enum';
 import { ResponseInterface } from '../interfaces/response.interface';
+import { MessageService } from '../../message/services/message.service';
 
 @Injectable()
 export class ResponseInterceptor
@@ -29,6 +30,7 @@ export class ResponseInterceptor
     private readonly reflector: Reflector,
     private readonly configService: ConfigService,
     private readonly helperDateService: HelperDateService,
+    private readonly messageService: MessageService,
   ) {}
 
   intercept(
@@ -103,13 +105,13 @@ export class ResponseInterceptor
               ..._metadata,
             };
 
-            // const message: string = this.messageService.setMessage(
-            //   messagePath,
-            //   {
-            //     customLanguage: xLanguage,
-            //     properties: messageProperties,
-            //   },
-            // );
+            const message: string = this.messageService.setMessage(
+              messagePath,
+              {
+                customLanguage: xLanguage,
+                properties: messageProperties,
+              },
+            );
 
             response.setHeader('x-custom-lang', xLanguage);
             response.setHeader('x-timestamp', xTimestamp);
@@ -120,7 +122,7 @@ export class ResponseInterceptor
 
             return {
               statusCode,
-              message: '',
+              message,
               _metadata: metadata,
               data,
             };

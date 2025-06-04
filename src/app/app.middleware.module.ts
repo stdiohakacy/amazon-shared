@@ -5,10 +5,7 @@ import {
   RequestMethod,
 } from '@nestjs/common';
 import { AppCustomLanguageMiddleware } from './middlewares/app.custom-language.middleware';
-@Module({
-  providers: [],
-  imports: [],
-})
+@Module({})
 export class AppMiddlewareModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
     consumer

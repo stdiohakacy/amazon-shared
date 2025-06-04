@@ -2,12 +2,19 @@ import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Response, NextFunction } from 'express';
 import { HelperArrayService } from '../../modules/helpers/services/helper.array.service';
 import { RequestAppInterface } from '../../modules/request/interfaces/request.interface';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AppCustomLanguageMiddleware implements NestMiddleware {
   private readonly availableLanguage: string[];
-  constructor(private readonly helperArrayService: HelperArrayService) {
-    this.availableLanguage = ['en'];
+
+  constructor(
+    private readonly configService: ConfigService,
+    private readonly helperArrayService: HelperArrayService,
+  ) {
+    this.availableLanguage = this.configService.get<string[]>(
+      'message.availableLanguage',
+    );
   }
 
   async use(
