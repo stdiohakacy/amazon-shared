@@ -21,4 +21,4 @@ import { PinoLoggerAdapter } from './pino.logger.adapter';
   providers: [PinoLoggerAdapter],
   exports: [PinoLoggerAdapter],
 })
-export class LoggerModule {}
+export class CornalLoggerModule {}

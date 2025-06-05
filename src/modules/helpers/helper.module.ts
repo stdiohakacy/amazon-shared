@@ -8,10 +8,10 @@ import { HelperStringService } from './services/helper.string.service';
 
 @Global()
 @Module({})
-export class HelperModule {
+export class CornalHelperModule {
   static forRoot(): DynamicModule {
     return {
-      module: HelperModule,
+      module: CornalHelperModule,
       providers: [
         HelperArrayService,
         HelperDateService,

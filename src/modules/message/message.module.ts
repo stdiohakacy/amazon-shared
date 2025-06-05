@@ -7,10 +7,10 @@ import { ENUM_MESSAGE_LANGUAGE } from './enums/message.enum';
 
 @Global()
 @Module({})
-export class MessageModule {
+export class CornalMessageModule {
   static forRoot(): DynamicModule {
     return {
-      module: MessageModule,
+      module: CornalMessageModule,
       providers: [MessageService],
       exports: [MessageService],
       imports: [

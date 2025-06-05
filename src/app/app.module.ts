@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
-import { ShareModule } from '../modules/shared.module';
+import { CornalShareModule } from '../modules/shared.module';
+import { AppController } from './app.controller';
 
 @Module({
-  imports: [ShareModule],
+  controllers: [AppController],
+  imports: [CornalShareModule],
 })
 export class AppModule {}

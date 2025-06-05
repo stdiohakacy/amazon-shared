@@ -1,10 +1,10 @@
 import { Module, Global } from '@nestjs/common';
-import { LoggerModule } from './logger/logger.module';
-import { HelperModule } from './helpers/helper.module';
-import { AppMiddlewareModule } from '../app/app.middleware.module';
+import { CornalLoggerModule } from './logger/logger.module';
+import { CornalHelperModule } from './helpers/helper.module';
+import { CornalAppMiddlewareModule } from '../app/app.middleware.module';
 import { ConfigModule } from '@nestjs/config';
 import configs from '../configs';
-import { MessageModule } from './message/message.module';
+import { CornalMessageModule } from './message/message.module';
 
 @Global()
 @Module({
@@ -16,10 +16,10 @@ import { MessageModule } from './message/message.module';
       envFilePath: ['.env'],
       expandVariables: false,
     }),
-    HelperModule.forRoot(),
-    MessageModule.forRoot(),
-    AppMiddlewareModule,
-    LoggerModule,
+    CornalHelperModule.forRoot(),
+    CornalMessageModule.forRoot(),
+    CornalAppMiddlewareModule,
+    CornalLoggerModule,
   ],
 })
-export class ShareModule {}
+export class CornalShareModule {}

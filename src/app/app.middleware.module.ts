@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { AppCustomLanguageMiddleware } from './middlewares/app.custom-language.middleware';
 @Module({})
-export class AppMiddlewareModule implements NestModule {
+export class CornalAppMiddlewareModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
     consumer
       .apply(AppCustomLanguageMiddleware)
