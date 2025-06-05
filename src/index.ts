@@ -21,6 +21,7 @@ export * from './modules/file/enums';
 
 export * from './modules/request/enums/request.status-code.enum';
 export * from './modules/request/interfaces/request.interface';
+export * from './modules/request/validations/request.is-password.validation';
 
 export * from './modules/response/decorators/response.decorator';
 export * from './modules/response/dtos/response.dto';
