@@ -28,3 +28,5 @@ export * from './modules/request/interfaces/request.interface';
 export * from './modules/response/decorators/response.decorator';
 export * from './modules/response/dtos/response.dto';
 export * from './modules/response/interfaces/response.interface';
+
+export * from './modules/message/message.module';
