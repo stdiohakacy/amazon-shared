@@ -4,6 +4,7 @@ import { CornalHelperModule } from './helpers/helper.module';
 import { CornalAppMiddlewareModule } from '../app/app.middleware.module';
 import { ConfigModule } from '@nestjs/config';
 import configs from '../configs';
+import { CornalRequestModule } from './request/request.module';
 
 @Global()
 @Module({
@@ -16,6 +17,7 @@ import configs from '../configs';
       expandVariables: false,
     }),
     CornalHelperModule.forRoot(),
+    CornalRequestModule.forRoot(),
     CornalAppMiddlewareModule,
     CornalLoggerModule,
   ],

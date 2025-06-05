@@ -1,5 +1,4 @@
 import { DynamicModule, Global, Module } from '@nestjs/common';
-import * as path from 'path';
 import { I18nModule, HeaderResolver, I18nJsonLoader } from 'nestjs-i18n';
 import { MessageService } from './services/message.service';
 
